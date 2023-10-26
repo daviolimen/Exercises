@@ -1,0 +1,35 @@
+stable_sort(), serve pra sortar os elementos preservando a ordem relativa entre os elementos que tem o mesmo valor
+
+cin.ignore(), ignora um ou mais caracteres do buffer de entrada
+
+struct até que é útil de vez em quando
+
+mexer com string em c++ é bem chato
+
+swap() é bem apelão até
+
+o número de bubble swaps não é igual ao número de merge swaps
+
+dá pra usar ==, !=, > e < com string em c++ se ela for do tipo string mesmo, ele compara em ordem lexicográfica
+
+priority_queue<tipo1, vetor para armazenar, função de ordenação>, para deixar o menor no topo dá pra usar a função greater<tipo>
+
+lower_bound e upper_bound é brabinho
+
+binary_search tem que ter cuidado quando os valores não forem todos distintos
+
+usar somas de prefixo é bem forte
+
+usar maps para armazenar os valores encontrados anteriormente também é bem forte
+
+as vezes vale a pena passar por cada coisa e dar um nome pra ela numa outra matriz usando um flood fill por exemplo
+
+two pointers geralmente é meio chatinho, mas é importante lembrar de fazer todos os edge cases
+
+bitmask parece ser muito doido
+
+dijkstra é muito apelão, e dá pra fazer dp e ir achando um monte de informação
+
+ver o negócio lá de constructive algorithms, aqui: https://assets.hkoi.org/training2019/cast.pdf
+
+sempre que tiver float ou double lembrar de usar o fixed e o setprecision, SEMPRE

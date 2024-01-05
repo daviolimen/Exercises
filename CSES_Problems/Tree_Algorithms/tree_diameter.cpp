@@ -1,32 +1,52 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef pair<int, int> pi;
-
 #define MAXN 200001
 
-int n;
+int n, dist[MAXN];
 vector<int> graph[MAXN];
 
-pi dfs(int x, int p) {
-    pi res = {0, x};
-    for (auto v : graph[x]) {
+void dfs(int u, int p) {
+    dist[u] = dist[p] + 1;
+    for (auto v : graph[u]) {
         if (v == p) continue;
-        pi d = dfs(v, x);
-        res = max(res,{d.first + 1, d.second});
+        dfs(v, u);
     }
-    return res;
 }
 
 int main() {
     cin >> n;
-    int a, b;
     for (int i = 1; i < n; i++) {
-        cin >> a >> b;
+        int a, b; cin >> a >> b;
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
 
-    pi par1 = dfs(1, 0);
-    cout << dfs(par1.second, 0).first << "\n";
+    if (n == 1) {
+        cout << "0\n";
+        return 0;
+    }
+
+    dist[0] = -1;
+    dfs(1, 0);
+
+    int bestNode, maxDist = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] > maxDist) {
+            bestNode = i;
+            maxDist = dist[i];
+        }
+    }
+
+    dfs(bestNode, 0);
+
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] > maxDist) {
+            bestNode = i;
+            maxDist = dist[i];
+        }
+    }
+
+    cout << maxDist << "\n";
 }

@@ -10,16 +10,18 @@ int main() {
     freopen("outofplace.out", "w", stdout);
 
     cin >> n;
-    for (int i = 0; i < n; i++) cin >> arr[i];
-
-    copy(arr, arr + n, sorted);
-    sort(sorted, sorted + n);
-
-    int ans = 0;
-
     for (int i = 0; i < n; i++) {
-        if (arr[i] != sorted[i]) ans++;
+        cin >> arr[i];
+        sorted[i] = arr[i];
     }
 
-    cout << ans - 1 << "\n";
+    sort(sorted, sorted + n);
+
+    int ctr = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != sorted[i]) ctr++;
+    }
+
+    cout << (ctr - 1) << "\n";
 }

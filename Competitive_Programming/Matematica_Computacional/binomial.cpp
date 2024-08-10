@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define MAXN 1000
+const int MAXN = (int) 1e6 + 10;
 
 int p, fat[MAXN];
 
@@ -25,3 +25,4 @@ int factorial(int n) {
 int choose(int n, int k) {
     return (((factorial(n) * xpow(factorial(k), p-2)) % p) * xpow(factorial(n-k), p-2) ) % p;
 }
+

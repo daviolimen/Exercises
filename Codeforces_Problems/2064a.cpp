@@ -6,11 +6,10 @@ int main() {
     int tt; cin >> tt;
     while (tt--) {
         int n; cin >> n;
-        if (n % 2 == 0) {
-            cout << "-1\n";
-            continue;
-        }
-        cout << n << " ";
-        for (int i = 1; i < n; i++) cout << i << " \n"[i == n - 1];
+        string s; cin >> s;
+        int ans = 0;
+        if (s[0] == '1') ans++;
+        for (int i = 1; i < n; i++) if (s[i] != s[i - 1]) ans++;
+        cout << ans << "\n";
     }
 }

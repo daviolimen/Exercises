@@ -6,18 +6,33 @@ int main() {
     int tt; cin >> tt;
     while (tt--) {
         int n, x; cin >> n >> x;
-        vector<int> ans(n);
-        if (x == n) {
-            for (int i = 0; i < n; i++) ans[i] = i;
-        } else {
-            int curr = 0;
-            for (int i = 0; i < n - 1; i++) {
-                if (i == x) curr++;
-                ans[i] = curr;
-                curr++;
+        int cnt = __builtin_popcount(x);
+        if (x == 0) {
+            if (n == 1) {
+                cout << "-1\n";
+            } else if (n % 2 == 0) {
+                cout << n << "\n";
+            } else {
+                cout << 6 + (n - 3) << "\n";
             }
-            ans[n - 1] = x;
+            continue;
         }
-        for (int i = 0; i < n; i++) cout << ans[i] << " \n"[i == (n - 1)];
+        if (x == 1) {
+            if (n % 2 == 0) {
+                cout << 5 + (n - 2) << "\n";
+            } else {
+                cout << n << "\n";
+            }
+            continue;
+        }
+        if (n - cnt >= 0) {
+            if ((n - cnt) % 2) {
+                cout << x + (n - cnt + 1) << "\n";
+            } else {
+                cout << x + n - cnt << "\n";
+            }
+        } else {
+            cout << x << "\n";
+        }
     }
 }

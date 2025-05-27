@@ -20,7 +20,7 @@ int32_t main() {
     cin >> m >> n;
     for (int i = 0; i < m; i++) {
         int a, b, c; cin >> a >> b >> c;
-        graph[a][b] = c;
+        graph[a][b] += c;
     }
 
     int ans = 0;

@@ -1,3 +1,27 @@
+# Notas locais
 TODO
 INTERESTING IDEAS
 OBI
+
+# Binários e saídas de compilação
+*.exe
+*.out
+*.o
+a.out
+**/output/
+/bin/
+build/
+
+# Arquivos temporários do stress test e de execução local
+in
+out1
+out2
+*.in
+*.ans
+
+# Editores e sistema
+.vscode/
+.idea/
+*.swp
+.DS_Store
+__pycache__/
